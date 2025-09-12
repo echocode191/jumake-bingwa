@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumake Bingwa Services - Affordable Data, Minutes & SMS Bundles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00a859;
+            --secondary: #008847;
+            --accent: #00c875;
+            --light: #ffffff;
+            --dark: #333333;
+            --whatsapp: #25d366;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --background: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 168, 89, 0.1);
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.3;
+            }
+            25% {
+                transform: translateY(-100px) translateX(50px) scale(1.1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateY(-200px) translateX(-30px) scale(0.9);
+                opacity: 0.4;
+            }
+            75% {
+                transform: translateY(-50px) translateX(70px) scale(1.05);
+                opacity: 0.6;
+            }
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--text-light);
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .logo img {
+            max-width: 70%;
+            max-height: 70%;
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+            }
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            animation: bounce 1.5s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            opacity: 0.9;
+            animation: fadeIn 2s ease-out;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            animation: whatsappFloat 3s infinite ease-in-out;
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes whatsappFloat {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-15px) scale(1.1);
+            }
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            background: var(--light);
+            border-radius: 50px;
+            padding: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            animation: slideUp 0.8s ease-out 0.3s both;
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .nav-tab {
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: var(--text-dark);
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .nav-tab:hover::before {
+            left: 100%;
+        }
+        
+        .nav-tab.active {
+            background: var(--primary);
+            color: var(--text-light);
+            font-weight: 600;
+            transform: scale(1.05);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeInTab 0.5s ease-out;
+        }
+        
+        @keyframes fadeInTab {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-align: center;
+            color: var(--primary);
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            animation: expandWidth 1s ease-out;
+        }
+        
+        @keyframes expandWidth {
+            from {
+                width: 0;
+            }
+            to {
+                width: 80px;
+            }
+        }
+        
+        .deals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .deal-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 0.6s ease-out both;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .deal-card:nth-child(1) { animation-delay: 0.1s; }
+        .deal-card:nth-child(2) { animation-delay: 0.2s; }
+        .deal-card:nth-child(3) { animation-delay: 0.3s; }
+        .deal-card:nth-child(4) { animation-delay: 0.4s; }
+        .deal-card:nth-child(5) { animation-delay: 0.5s; }
+        .deal-card:nth-child(6) { animation-delay: 0.6s; }
+        
+        .deal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .deal-card:hover::before {
+            transform: scaleY(1);
+        }
+        
+        .deal-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .deal-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .deal-price::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .deal-card:hover .deal-price::after {
+            width: 100%;
+        }
+        
+        .deal-details {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        .deal-validity {
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--whatsapp);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+        
+        .whatsapp-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-section {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+        
+        .about-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .about-content p {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .about-content p::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .about-content strong {
+            color: var(--secondary);
+        }
+        
+        .contact-section {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 1s ease-out 0.7s both;
+        }
+        
+        .contact-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: rgba(0, 168, 89, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(0, 168, 89, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.3rem;
+            animation: iconPulse 2s infinite;
+        }
+        
+        @keyframes iconPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        
+        footer {
+            background: var(--secondary);
+            color: var(--text-light);
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 40px;
+            border-radius: 15px 15px 0 0;
+            animation: slideUp 0.8s ease-out 0.9s both;
+        }
+        
+        .note {
+            background: rgba(0, 168, 89, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            animation: slideInLeft 0.8s ease-out 0.4s both;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .banner {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+        
+        .banner h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .banner p {
+            font-size: 1.1rem;
+        }
+        
+        .banner a {
+            color: white;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.4rem;
+            }
+            
+            .deals-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .nav-tab {
+                margin: 5px;
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg" id="animatedBg"></div>
+    
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-float" onclick="quickWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://i.imgur.com/7Qpp9tP.png" alt="Jumake Bingwa Services Logo">
+                </div>
+                <h1 class="logo-text">Jumake Bingwa Services</h1>
+            </div>
+            <div class="tagline">PATA DATA OFFER HATA UKIWA NA OKOA</div>
+            <div class="subtitle">Affordable Data, Minutes & SMS Bundles</div>
+        </header>
+        
+        <div class="banner">
+            <h3>🔥 DATA OFFERS 🔥</h3>
+            <p>Get amazing deals even with Okoa Jahazi!</p>
+        </div>
+        
+        <div class="nav-tabs">
+            <div class="nav-tab active" onclick="showTab('daily-data')">Daily Data</div>
+            <div class="nav-tab" onclick="showTab('repeated-deals')">Repeatable Deals</div>
+            <div class="nav-tab" onclick="showTab('minutes-deals')">Minutes</div>
+            <div class="nav-tab" onclick="showTab('sms-deals')">SMS</div>
+            <div class="nav-tab" onclick="showTab('info')">General Info</div>
+        </div>
+        
+        <div id="daily-data" class="tab-content active">
+            <section class="deals-section">
+                <h2 class="section-title">Daily Data Bundles (Buy Only Once)</h2>
+                <div class="note">
+                    <i class="fas fa-info-circle"></i> Data offers are purchased once per number per day
+                </div>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 19</div>
+                        <div class="deal-details">🛜 1GB Data</div>
+                        <div class="deal-validity">Validity: 1 Hour</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 19 for 1GB - 1 Hour')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 20</div>
+                        <div class="deal-details">🛜 250MB Data</div>
+                        <div class="deal-validity">Validity: 24 Hours</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 20 for 250MB - 24 Hours')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 49</div>
+                        <div class="deal-details">🛜 350MB Data</div>
+                        <div class="deal-validity">Validity: 7 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 49 for 350MB - 7 Days')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 50</div>
+                        <div class="deal-details">🛜 1.5GB Data</div>
+                        <div class="deal-validity">Validity: 3 Hours</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 50 for 1.5GB - 3 Hours')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 55</div>
+                        <div class="deal-details">🛜 1.25GB Data</div>
+                        <div class="deal-validity">Validity: Till Midnight</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 55 for 1.25GB - Till Midnight')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 99</div>
+                        <div class="deal-details">🛜 1GB Data</div>
+                        <div class="deal-validity">Validity: 24 Hours</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 99 for 1GB - 24 Hours')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 385</div>
+                        <div class="deal-details">🛜 8.75GB Data</div>
+                        <div class="deal-validity">Validity: 7 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 385 for 8.75GB - 7 Days')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div id="repeated-deals" class="tab-content">
+            <section class="deals-section">
+                <h2 class="section-title">Repeatable Deals (Buy Multiple Times)</h2>
+                <div class="note">
+                    <i class="fas fa-info-circle"></i> These deals can be purchased multiple times a day
+                </div>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 23</div>
+                        <div class="deal-details">🛜 1GB Data</div>
+                        <div class="deal-validity">Validity: 1 Hour</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 23 for 1GB - 1 Hour')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 53</div>
+                        <div class="deal-details">🛜 1.5GB Data</div>
+                        <div class="deal-validity">Validity: 3 Hours</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 53 for 1.5GB - 3 Hours')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 120</div>
+                        <div class="deal-details">🛜 2GB Data</div>
+                        <div class="deal-validity">Validity: 1 Day</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 120 for 2GB - 1 Day')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div id="minutes-deals" class="tab-content">
+            <section class="deals-section">
+                <h2 class="section-title">Minutes Offers</h2>
+                <div class="note">
+                    <i class="fas fa-info-circle"></i> Buy unlimited times a day!
+                </div>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 51</div>
+                        <div class="deal-details">📞 200 Credo</div>
+                        <div class="deal-validity">Validity: Till Midnight</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 51 for 200 Credo - Till Midnight')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 22</div>
+                        <div class="deal-details">📞 45 Minutes</div>
+                        <div class="deal-validity">Validity: 3 Hours</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 22 for 45 Minutes - 3 Hours')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 24</div>
+                        <div class="deal-details">📞 20 Minutes</div>
+                        <div class="deal-validity">Validity: Till Midnight</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 24 for 20 Minutes - Till Midnight')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 252</div>
+                        <div class="deal-details">📞 250 Minutes</div>
+                        <div class="deal-validity">Validity: 7 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 252 for 250 Minutes - 7 Days')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div id="sms-deals" class="tab-content">
+            <section class="deals-section">
+                <h2 class="section-title">SMS Offers</h2>
+                <div class="note">
+                    <i class="fas fa-info-circle"></i> Buy unlimited times a day!
+                </div>
+                
+                <h3 style="margin-top: 30px; margin-bottom: 15px; color: var(--primary);">Daily SMS</h3>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 5</div>
+                        <div class="deal-details">💬 20 SMS</div>
+                        <div class="deal-validity">Validity: 24 Hours</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 5 for 20 SMS - 24 Hours')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 10</div>
+                        <div class="deal-details">💬 200 SMS</div>
+                        <div class="deal-validity">Validity: 24 Hours</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 10 for 200 SMS - 24 Hours')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 30px; margin-bottom: 15px; color: var(--primary);">Weekly SMS</h3>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 30</div>
+                        <div class="deal-details">💬 1000 SMS</div>
+                        <div class="deal-validity">Validity: 7 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 30 for 1000 SMS - 7 Days')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div id="info" class="tab-content">
+            <section class="about-section">
+                <h2 class="about-title">General Information</h2>
+                <div class="about-content">
+                    <p><strong>Payments:</strong> All payments should be made to the Till Number <strong>4880006</strong>.</p>
+                    
+                    <p><strong>Payment Method:</strong> Pay via M-Pesa -> Buy Goods and Services -> Till Number: 4880006</p>
+                    
+                    <p><strong>Data Offers:</strong> Data offers are purchased once per number per day.</p>
+                    
+                    <p><strong>SMS & Minutes:</strong> SMS and Minutes offers can be purchased multiple times a day.</p>
+                    
+                    <p><strong>Service Availability:</strong> Available even with Okoa Jahazi.</p>
+                    
+                    <p><strong>Customer Support:</strong> Available via Call, SMS, or WhatsApp for any inquiries.</p>
+                </div>
+            </section>
+        </div>
+        
+        <section class="contact-section">
+            <h2 class="contact-title">Payment & Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Till Number: <strong>4880006</strong></span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Call/SMS: <strong>+254 724 632 045</strong></span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp: <strong>+254 724 632 045</strong></span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-store"></i>
+                    <span>Service: <strong>Jumake Bingwa Services</strong></span>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2023 Jumake Bingwa Services. All rights reserved.</p>
+            <p>PATA DATA OFFER HATA UKIWA NA OKOA</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Create animated background bubbles
+        function createBubbles() {
+            const bg = document.getElementById('animatedBg');
+            const bubbleCount = 20;
+            
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                
+                // Random size
+                const size = Math.random() * 100 + 50;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                
+                // Random position
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation delay
+                bubble.style.animationDelay = `${Math.random() * 15}s`;
+                
+                bg.appendChild(bubble);
+            }
+        }
+        
+        // WhatsApp ordering function
+        function orderOnWhatsApp(dealDetails) {
+            const phoneNumber = "254724632045";
+            const message = `Hi, I'd like to order: ${dealDetails}. Till Number: 4880006`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        }
+        
+        // Quick WhatsApp function
+        function quickWhatsApp() {
+            const phoneNumber = "254724632045";
+            const message = `Hi, I'm interested in your services. Till Number: 4880006`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        }
+        
+        // Tab switching function
+        function showTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        // Initialize animations on page load
+        window.addEventListener('load', () => {
+            createBubbles();
+            
+            // Add stagger animation to deal cards
+            const dealCards = document.querySelectorAll('.deal-card');
+            dealCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
