@@ -703,6 +703,14 @@
             background: linear-gradient(90deg, var(--light), var(--accent));
             border-radius: 2px;
         }
+        
+        .category-description {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
@@ -736,15 +744,15 @@
         <div class="notice-box">
             <h3>IMPORTANT NOTICE</h3>
             <ul>
-                <li>SMS deals and minutes deals are purchasable many times a day</li>
-                <li>Bingwa data deals are purchased only once a day</li>
-                <li>Unlimited data deals can be purchased multiple times a day</li>
+                <li>Daily Data deals are purchased only once per day</li>
+                <li>Unlimited Data deals can be purchased multiple times a day</li>
+                <li>Minutes and SMS deals can be purchased multiple times a day</li>
+                <li>Monthly Bundles are valid for 30 days</li>
             </ul>
         </div>
         
         <div class="nav-tabs">
             <div class="nav-tab active" onclick="showTab('data-deals')">Data Deals</div>
-            <div class="nav-tab" onclick="showTab('unlimited-deals')">Unlimited Data</div>
             <div class="nav-tab" onclick="showTab('minutes-deals')">Minutes Deals</div>
             <div class="nav-tab" onclick="showTab('sms-deals')">SMS Deals</div>
             <div class="nav-tab" onclick="showTab('monthly-bundles')">Monthly Bundles</div>
@@ -753,6 +761,9 @@
         <div id="data-deals" class="tab-content active">
             <section class="deals-section">
                 <h2 class="section-title">Data Deals</h2>
+                
+                <h3 class="subcategory-title">Daily Data Deals</h3>
+                <p class="category-description">Purchase only once per day</p>
                 <div class="deals-grid">
                     <div class="deal-card">
                         <div class="deal-price">Ksh 19</div>
@@ -817,13 +828,9 @@
                         </button>
                     </div>
                 </div>
-            </section>
-        </div>
-        
-        <div id="unlimited-deals" class="tab-content">
-            <section class="deals-section">
-                <h2 class="section-title">Unlimited Data Deals</h2>
-                <p style="text-align: center; margin-bottom: 20px; font-size: 1.1rem;">Can be purchased multiple times a day</p>
+                
+                <h3 class="subcategory-title">Unlimited Data Deals</h3>
+                <p class="category-description">Can be purchased multiple times a day</p>
                 <div class="deals-grid">
                     <div class="deal-card">
                         <div class="unlimited-badge">Unlimited</div>
@@ -861,7 +868,9 @@
         <div id="minutes-deals" class="tab-content">
             <section class="deals-section">
                 <h2 class="section-title">Minutes Deals</h2>
-                <p style="text-align: center; margin-bottom: 20px; font-size: 1.1rem;">Can be purchased multiple times a day</p>
+                
+                <h3 class="subcategory-title">Daily Minutes</h3>
+                <p class="category-description">Can be purchased multiple times a day</p>
                 <div class="deals-grid">
                     <div class="deal-card">
                         <div class="unlimited-badge">Multiple</div>
@@ -893,13 +902,61 @@
                         </button>
                     </div>
                 </div>
+                
+                <h3 class="subcategory-title">Easy-Talk Weekly</h3>
+                <p class="category-description">Weekly minutes packages</p>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="weekly-badge">Weekly</div>
+                        <div class="deal-price">Ksh 500</div>
+                        <div class="deal-details">500 Minutes</div>
+                        <div class="deal-validity">Validity: 7 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 500 for 500 Minutes - Weekly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="weekly-badge">Weekly</div>
+                        <div class="deal-price">Ksh 250</div>
+                        <div class="deal-details">200 Minutes</div>
+                        <div class="deal-validity">Validity: 7 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 250 for 200 Minutes - Weekly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+                
+                <h3 class="subcategory-title">Easy-Talk Other</h3>
+                <p class="category-description">Short-term minutes packages</p>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="unlimited-badge">Multiple</div>
+                        <div class="deal-price">Ksh 100</div>
+                        <div class="deal-details">100 Minutes</div>
+                        <div class="deal-validity">Validity: 2 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 100 for 100 Minutes - 2 Days')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="unlimited-badge">Multiple</div>
+                        <div class="deal-price">Ksh 50</div>
+                        <div class="deal-details">50 Minutes</div>
+                        <div class="deal-validity">Validity: Midnight</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 50 for 50 Minutes - Midnight')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
             </section>
         </div>
         
         <div id="sms-deals" class="tab-content">
             <section class="deals-section">
                 <h2 class="section-title">SMS Deals</h2>
-                <p style="text-align: center; margin-bottom: 20px; font-size: 1.1rem;">Can be purchased multiple times a day</p>
+                <p class="category-description">Can be purchased multiple times a day</p>
                 <div class="deals-grid">
                     <div class="deal-card">
                         <div class="unlimited-badge">Multiple</div>
@@ -937,8 +994,10 @@
         <div id="monthly-bundles" class="tab-content">
             <section class="deals-section">
                 <h2 class="section-title">Monthly Bundles</h2>
+                <p class="category-description">Comprehensive monthly packages with data, minutes, and SMS</p>
                 
                 <h3 class="subcategory-title">Monthly Bundle</h3>
+                <p class="category-description">All-in-one monthly packages</p>
                 <div class="deals-grid">
                     <div class="deal-card">
                         <div class="monthly-badge">Monthly</div>
@@ -1001,7 +1060,8 @@
                     </div>
                 </div>
                 
-                <h3 class="subcategory-title">MONTHLY</h3>
+                <h3 class="subcategory-title">Data-Only Monthly</h3>
+                <p class="category-description">Monthly data packages</p>
                 <div class="deals-grid">
                     <div class="deal-card">
                         <div class="monthly-badge">Monthly</div>
@@ -1055,6 +1115,7 @@
                 </div>
                 
                 <h3 class="subcategory-title">Easy-Talk Monthly</h3>
+                <p class="category-description">Monthly minutes and SMS packages</p>
                 <div class="deals-grid">
                     <div class="deal-card">
                         <div class="monthly-badge">Monthly</div>
@@ -1092,52 +1153,6 @@
                         <div class="deal-details">2700 Mins + 5000 SMS</div>
                         <div class="deal-validity">Validity: 30 Days</div>
                         <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 3000 for 2700 Mins + 5000 SMS - Monthly')">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </button>
-                    </div>
-                </div>
-                
-                <h3 class="subcategory-title">Easy-Talk Weekly</h3>
-                <div class="deals-grid">
-                    <div class="deal-card">
-                        <div class="weekly-badge">Weekly</div>
-                        <div class="deal-price">Ksh 500</div>
-                        <div class="deal-details">500 Mins</div>
-                        <div class="deal-validity">Validity: 7 Days</div>
-                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 500 for 500 Mins - Weekly')">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </button>
-                    </div>
-                    
-                    <div class="deal-card">
-                        <div class="weekly-badge">Weekly</div>
-                        <div class="deal-price">Ksh 250</div>
-                        <div class="deal-details">200 Mins</div>
-                        <div class="deal-validity">Validity: 7 Days</div>
-                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 250 for 200 Mins - Weekly')">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </button>
-                    </div>
-                </div>
-                
-                <h3 class="subcategory-title">Easy-Talk Other</h3>
-                <div class="deals-grid">
-                    <div class="deal-card">
-                        <div class="unlimited-badge">Multiple</div>
-                        <div class="deal-price">Ksh 100</div>
-                        <div class="deal-details">100 Minutes</div>
-                        <div class="deal-validity">Validity: 2 Days</div>
-                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 100 for 100 Minutes - 2 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
-                        </button>
-                    </div>
-                    
-                    <div class="deal-card">
-                        <div class="unlimited-badge">Multiple</div>
-                        <div class="deal-price">Ksh 50</div>
-                        <div class="deal-details">50 Minutes</div>
-                        <div class="deal-validity">Validity: Midnight</div>
-                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 50 for 50 Minutes - Midnight')">
                             <i class="fab fa-whatsapp"></i> Order Now
                         </button>
                     </div>
