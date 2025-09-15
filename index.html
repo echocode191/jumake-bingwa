@@ -170,7 +170,7 @@
         }
         .deals-section {
             margin: 40px 0;
-            animation: fadeInUp 1s ease forwards;
+            animation: fadeInUp 0.3s ease forwards;
             opacity: 0;
             transform-style: preserve-3d;
         }
@@ -222,10 +222,10 @@
             padding: 25px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.5s ease;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            animation: slideIn 0.8s ease forwards;
+            animation: slideIn 0.3s ease forwards;
             opacity: 0;
             transform-style: preserve-3d;
             transform: translateZ(0);
@@ -241,11 +241,11 @@
                 transform: translateX(0) rotateY(0);
             }
         }
-        .deal-card:nth-child(1) { animation-delay: 0.1s; }
-        .deal-card:nth-child(2) { animation-delay: 0.2s; }
-        .deal-card:nth-child(3) { animation-delay: 0.3s; }
-        .deal-card:nth-child(4) { animation-delay: 0.4s; }
-        .deal-card:nth-child(5) { animation-delay: 0.5s; }
+        .deal-card:nth-child(1) { animation-delay: 0.05s; }
+        .deal-card:nth-child(2) { animation-delay: 0.1s; }
+        .deal-card:nth-child(3) { animation-delay: 0.15s; }
+        .deal-card:nth-child(4) { animation-delay: 0.2s; }
+        .deal-card:nth-child(5) { animation-delay: 0.25s; }
         .deal-card::before {
             content: '';
             position: absolute;
@@ -324,7 +324,7 @@
             padding: 30px;
             margin: 40px 0;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 1.5s ease forwards;
+            animation: fadeInUp 0.3s ease forwards;
             opacity: 0;
             transform-style: preserve-3d;
             transform: translateZ(0);
@@ -351,9 +351,9 @@
             margin: 40px 0;
             text-align: center;
             color: var(--text-dark);
-            animation: fadeIn 1.5s ease forwards;
+            animation: fadeIn 0.3s ease forwards;
             opacity: 0;
-            animation-delay: 0.6s;
+            animation-delay: 0.3s;
             transform-style: preserve-3d;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
@@ -395,9 +395,9 @@
             text-align: center;
             padding: 30px 0;
             font-size: 1rem;
-            animation: fadeIn 2s ease forwards;
+            animation: fadeIn 0.3s ease forwards;
             opacity: 0;
-            animation-delay: 0.8s;
+            animation-delay: 0.3s;
             transform-style: preserve-3d;
             box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
         }
@@ -419,7 +419,7 @@
             padding: 12px 25px;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             font-weight: 600;
             color: var(--primary);
             position: relative;
@@ -437,7 +437,7 @@
             background: rgba(0, 168, 89, 0.2);
             transform: translateZ(-1px);
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.2s;
         }
         .nav-tab:hover::before {
             opacity: 1;
@@ -454,7 +454,7 @@
         }
         .tab-content.active {
             display: block;
-            animation: fadeInUp 0.5s ease forwards;
+            animation: fadeInUp 0.2s ease forwards;
         }
         
         /* 3D Floating Elements */
@@ -711,6 +711,26 @@
             color: var(--text-light);
             opacity: 0.9;
         }
+        
+        .highlight-offer {
+            background: rgba(255, 193, 7, 0.2);
+            border: 2px dashed #ffc107;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .highlight-offer h3 {
+            color: var(--light);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-offer p {
+            color: var(--light);
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
@@ -956,6 +976,12 @@
         <div id="sms-deals" class="tab-content">
             <section class="deals-section">
                 <h2 class="section-title">SMS Deals</h2>
+                
+                <div class="highlight-offer">
+                    <h3>SPECIAL OFFER!</h3>
+                    <p>1500 SMS Monthly for only Ksh 101</p>
+                </div>
+                
                 <p class="category-description">Can be purchased multiple times a day</p>
                 <div class="deals-grid">
                     <div class="deal-card">
@@ -984,6 +1010,16 @@
                         <div class="deal-details">1000 SMS</div>
                         <div class="deal-validity">Validity: 7 Days</div>
                         <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 30 for 1000 SMS - 7 Days')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 101</div>
+                        <div class="deal-details">1500 SMS</div>
+                        <div class="deal-validity">Validity: 30 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 101 for 1500 SMS - Monthly')">
                             <i class="fab fa-whatsapp"></i> Order Now
                         </button>
                     </div>
@@ -1212,12 +1248,13 @@
             window.open(whatsappURL, '_blank');
         }
         
-        // Tab switching function
+        // Tab switching function - IMMEDIATE
         function showTab(tabId) {
-            // Hide all tab contents
+            // Hide all tab contents immediately
             const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(tab => {
                 tab.classList.remove('active');
+                tab.style.display = 'none';
             });
             
             // Remove active class from all tabs
@@ -1226,8 +1263,10 @@
                 tab.classList.remove('active');
             });
             
-            // Show selected tab content
-            document.getElementById(tabId).classList.add('active');
+            // Show selected tab content immediately
+            const selectedTab = document.getElementById(tabId);
+            selectedTab.style.display = 'block';
+            selectedTab.classList.add('active');
             
             // Add active class to clicked tab
             event.target.classList.add('active');
@@ -1297,7 +1336,7 @@
             
             const dealCards = document.querySelectorAll('.deal-card');
             dealCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
+                card.style.animationDelay = `${index * 0.05}s`;
             });
             
             // Add 3D effect on mouse move
