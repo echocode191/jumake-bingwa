@@ -638,6 +638,71 @@
             font-size: 1.5rem;
             line-height: 1;
         }
+        
+        .unlimited-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: var(--light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+        
+        .monthly-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff5722;
+            color: var(--light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+        
+        .weekly-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #2196f3;
+            color: var(--light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+        
+        .subcategory-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 30px 0 20px;
+            color: var(--light);
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .subcategory-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--light), var(--accent));
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body>
@@ -673,6 +738,7 @@
             <ul>
                 <li>SMS deals and minutes deals are purchasable many times a day</li>
                 <li>Bingwa data deals are purchased only once a day</li>
+                <li>Unlimited data deals can be purchased multiple times a day</li>
             </ul>
         </div>
         
@@ -681,6 +747,7 @@
             <div class="nav-tab" onclick="showTab('unlimited-deals')">Unlimited Data</div>
             <div class="nav-tab" onclick="showTab('minutes-deals')">Minutes Deals</div>
             <div class="nav-tab" onclick="showTab('sms-deals')">SMS Deals</div>
+            <div class="nav-tab" onclick="showTab('monthly-bundles')">Monthly Bundles</div>
         </div>
         
         <div id="data-deals" class="tab-content active">
@@ -756,8 +823,10 @@
         <div id="unlimited-deals" class="tab-content">
             <section class="deals-section">
                 <h2 class="section-title">Unlimited Data Deals</h2>
+                <p style="text-align: center; margin-bottom: 20px; font-size: 1.1rem;">Can be purchased multiple times a day</p>
                 <div class="deals-grid">
                     <div class="deal-card">
+                        <div class="unlimited-badge">Unlimited</div>
                         <div class="deal-price">Ksh 23</div>
                         <div class="deal-details">1GB Data</div>
                         <div class="deal-validity">Validity: 1 Hour</div>
@@ -767,6 +836,7 @@
                     </div>
                     
                     <div class="deal-card">
+                        <div class="unlimited-badge">Unlimited</div>
                         <div class="deal-price">Ksh 52</div>
                         <div class="deal-details">1.5GB Data</div>
                         <div class="deal-validity">Validity: 3 Hours</div>
@@ -776,6 +846,7 @@
                     </div>
                     
                     <div class="deal-card">
+                        <div class="unlimited-badge">Unlimited</div>
                         <div class="deal-price">Ksh 110</div>
                         <div class="deal-details">2GB Data</div>
                         <div class="deal-validity">Validity: 24 Hours</div>
@@ -790,8 +861,10 @@
         <div id="minutes-deals" class="tab-content">
             <section class="deals-section">
                 <h2 class="section-title">Minutes Deals</h2>
+                <p style="text-align: center; margin-bottom: 20px; font-size: 1.1rem;">Can be purchased multiple times a day</p>
                 <div class="deals-grid">
                     <div class="deal-card">
+                        <div class="unlimited-badge">Multiple</div>
                         <div class="deal-price">Ksh 22</div>
                         <div class="deal-details">45 Minutes</div>
                         <div class="deal-validity">Validity: 3 Hours</div>
@@ -801,6 +874,7 @@
                     </div>
                     
                     <div class="deal-card">
+                        <div class="unlimited-badge">Multiple</div>
                         <div class="deal-price">Ksh 51</div>
                         <div class="deal-details">50 Minutes</div>
                         <div class="deal-validity">Validity: Midnight</div>
@@ -810,6 +884,7 @@
                     </div>
                     
                     <div class="deal-card">
+                        <div class="unlimited-badge">Multiple</div>
                         <div class="deal-price">Ksh 101</div>
                         <div class="deal-details">100 Minutes</div>
                         <div class="deal-validity">Validity: Midnight</div>
@@ -824,8 +899,10 @@
         <div id="sms-deals" class="tab-content">
             <section class="deals-section">
                 <h2 class="section-title">SMS Deals</h2>
+                <p style="text-align: center; margin-bottom: 20px; font-size: 1.1rem;">Can be purchased multiple times a day</p>
                 <div class="deals-grid">
                     <div class="deal-card">
+                        <div class="unlimited-badge">Multiple</div>
                         <div class="deal-price">Ksh 5</div>
                         <div class="deal-details">20 SMS</div>
                         <div class="deal-validity">Validity: 24 Hours</div>
@@ -835,6 +912,7 @@
                     </div>
                     
                     <div class="deal-card">
+                        <div class="unlimited-badge">Multiple</div>
                         <div class="deal-price">Ksh 10</div>
                         <div class="deal-details">200 SMS</div>
                         <div class="deal-validity">Validity: 24 Hours</div>
@@ -844,10 +922,222 @@
                     </div>
                     
                     <div class="deal-card">
+                        <div class="unlimited-badge">Multiple</div>
                         <div class="deal-price">Ksh 30</div>
                         <div class="deal-details">1000 SMS</div>
                         <div class="deal-validity">Validity: 7 Days</div>
                         <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 30 for 1000 SMS - 7 Days')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div id="monthly-bundles" class="tab-content">
+            <section class="deals-section">
+                <h2 class="section-title">Monthly Bundles</h2>
+                
+                <h3 class="subcategory-title">Monthly Bundle</h3>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 500</div>
+                        <div class="deal-details">100 Mins, 500 SMS, 2 GB</div>
+                        <div class="deal-validity">Validity: 30 Days + Free WhatsApp</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 500 for 100 Mins, 500 SMS, 2 GB + Free WhatsApp - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 1000</div>
+                        <div class="deal-details">8 GB, 400 Mins, 1000 SMS</div>
+                        <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 1000 for 8 GB, 400 Mins, 1000 SMS + WhatsApp - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 2000</div>
+                        <div class="deal-details">17 GB, 1000 Mins, 2000 SMS</div>
+                        <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 2000 for 17 GB, 1000 Mins, 2000 SMS + WhatsApp - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 3000</div>
+                        <div class="deal-details">27 GB, 1500 Mins, 3000 SMS</div>
+                        <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 3000 for 27 GB, 1500 Mins, 3000 SMS + WhatsApp - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 5000</div>
+                        <div class="deal-details">47 GB, 2500 Mins, 5000 SMS</div>
+                        <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 5000 for 47 GB, 2500 Mins, 5000 SMS + WhatsApp - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 10000</div>
+                        <div class="deal-details">100 GB, 7500 Mins, 10000 SMS</div>
+                        <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 10000 for 100 GB, 7500 Mins, 10000 SMS + WhatsApp - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+                
+                <h3 class="subcategory-title">MONTHLY</h3>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 250</div>
+                        <div class="deal-details">1.2 GB</div>
+                        <div class="deal-validity">Validity: 30 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 250 for 1.2 GB - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 500</div>
+                        <div class="deal-details">2.5 GB</div>
+                        <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 500 for 2.5 GB + WhatsApp - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 1000</div>
+                        <div class="deal-details">10 GB</div>
+                        <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 1000 for 10 GB + WhatsApp - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 2000</div>
+                        <div class="deal-details">22 GB</div>
+                        <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 2000 for 22 GB + WhatsApp - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 3000</div>
+                        <div class="deal-details">40 GB</div>
+                        <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 3000 for 40 GB + WhatsApp - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+                
+                <h3 class="subcategory-title">Easy-Talk Monthly</h3>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 500</div>
+                        <div class="deal-details">300 Mins + 500 SMS</div>
+                        <div class="deal-validity">Validity: 30 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 500 for 300 Mins + 500 SMS - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 1000</div>
+                        <div class="deal-details">800 Mins + 1000 SMS</div>
+                        <div class="deal-validity">Validity: 30 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 1000 for 800 Mins + 1000 SMS - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 2000</div>
+                        <div class="deal-details">1700 Mins + 5000 SMS</div>
+                        <div class="deal-validity">Validity: 30 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 2000 for 1700 Mins + 5000 SMS - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="monthly-badge">Monthly</div>
+                        <div class="deal-price">Ksh 3000</div>
+                        <div class="deal-details">2700 Mins + 5000 SMS</div>
+                        <div class="deal-validity">Validity: 30 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 3000 for 2700 Mins + 5000 SMS - Monthly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+                
+                <h3 class="subcategory-title">Easy-Talk Weekly</h3>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="weekly-badge">Weekly</div>
+                        <div class="deal-price">Ksh 500</div>
+                        <div class="deal-details">500 Mins</div>
+                        <div class="deal-validity">Validity: 7 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 500 for 500 Mins - Weekly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="weekly-badge">Weekly</div>
+                        <div class="deal-price">Ksh 250</div>
+                        <div class="deal-details">200 Mins</div>
+                        <div class="deal-validity">Validity: 7 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 250 for 200 Mins - Weekly')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+                
+                <h3 class="subcategory-title">Easy-Talk Other</h3>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <div class="unlimited-badge">Multiple</div>
+                        <div class="deal-price">Ksh 100</div>
+                        <div class="deal-details">100 Minutes</div>
+                        <div class="deal-validity">Validity: 2 Days</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 100 for 100 Minutes - 2 Days')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                    
+                    <div class="deal-card">
+                        <div class="unlimited-badge">Multiple</div>
+                        <div class="deal-price">Ksh 50</div>
+                        <div class="deal-details">50 Minutes</div>
+                        <div class="deal-validity">Validity: Midnight</div>
+                        <button class="whatsapp-btn" onclick="orderOnWhatsApp('Ksh 50 for 50 Minutes - Midnight')">
                             <i class="fab fa-whatsapp"></i> Order Now
                         </button>
                     </div>
