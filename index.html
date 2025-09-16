@@ -14,6 +14,7 @@
             --light: #ffffff;
             --dark: #333333;
             --whatsapp: #25d366;
+            --sms: #3498db;
             --text-dark: #333333;
             --text-light: #ffffff;
             --background: #f8f9fa;
@@ -432,7 +433,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: var(--whatsapp);
+            background: var(--primary);
             color: white;
             border: none;
             border-radius: 50px;
@@ -465,7 +466,7 @@
         }
         
         .whatsapp-btn:hover {
-            background: #128C7E;
+            background: var(--secondary);
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
@@ -708,7 +709,6 @@
         }
         
         .modal-option {
-            background: var(--primary);
             color: white;
             border: none;
             border-radius: 10px;
@@ -724,9 +724,32 @@
         }
         
         .modal-option:hover {
-            background: var(--secondary);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .whatsapp-option {
+            background: var(--whatsapp);
+        }
+        
+        .whatsapp-option:hover {
+            background: #128C7E;
+        }
+        
+        .sms-option {
+            background: var(--sms);
+        }
+        
+        .sms-option:hover {
+            background: #2980b9;
+        }
+        
+        .payment-option {
+            background: var(--primary);
+        }
+        
+        .payment-option:hover {
+            background: var(--secondary);
         }
         
         .payment-steps {
@@ -813,6 +836,11 @@
             .modal-title {
                 font-size: 1.5rem;
             }
+            
+            .modal-option {
+                font-size: 1rem;
+                padding: 12px 15px;
+            }
         }
     </style>
 </head>
@@ -868,7 +896,7 @@
                         <div class="deal-details">🛜 1GB Data</div>
                         <div class="deal-validity">Validity: 1 Hour</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 19 for 1GB - 1 Hour')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -877,7 +905,7 @@
                         <div class="deal-details">🛜 250MB Data</div>
                         <div class="deal-validity">Validity: 24 Hours</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 20 for 250MB - 24 Hours')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -886,7 +914,7 @@
                         <div class="deal-details">🛜 350MB Data</div>
                         <div class="deal-validity">Validity: 7 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 49 for 350MB - 7 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -895,7 +923,7 @@
                         <div class="deal-details">🛜 1.25GB Data</div>
                         <div class="deal-validity">Validity: Midnight</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 55 for 1.25GB - Midnight')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -904,7 +932,7 @@
                         <div class="deal-details">🛜 1.5GB Data</div>
                         <div class="deal-validity">Validity: 3 Hours</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 50 for 1.5GB - 3 Hours')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -913,7 +941,7 @@
                         <div class="deal-details">🛜 2.5GB Data</div>
                         <div class="deal-validity">Validity: 7 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 300 for 2.5GB - 7 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -922,7 +950,7 @@
                         <div class="deal-details">🛜 6GB Data</div>
                         <div class="deal-validity">Validity: 7 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 700 for 6GB - 7 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                 </div>
@@ -946,7 +974,7 @@
                         <div class="deal-details">🛜 1GB Data</div>
                         <div class="deal-validity">Validity: 1 Hour</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 23 for 1GB - 1 Hour')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -955,7 +983,7 @@
                         <div class="deal-details">🛜 1.5GB Data</div>
                         <div class="deal-validity">Validity: 3 Hours</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 52 for 1.5GB - 3 Hours')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -964,7 +992,7 @@
                         <div class="deal-details">🛜 2GB Data</div>
                         <div class="deal-validity">Validity: 24 Hours</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 110 for 2GB - 24 Hours')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                 </div>
@@ -990,7 +1018,7 @@
                         <div class="deal-details">📞 45 Minutes</div>
                         <div class="deal-validity">Validity: 3 Hours</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 22 for 45 Minutes - 3 Hours')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -999,7 +1027,7 @@
                         <div class="deal-details">📞 50 Minutes</div>
                         <div class="deal-validity">Validity: Midnight</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 51 for 50 Minutes - Midnight')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1008,7 +1036,7 @@
                         <div class="deal-details">📞 100 Minutes</div>
                         <div class="deal-validity">Validity: Midnight</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 101 for 100 Minutes - Midnight')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                 </div>
@@ -1020,7 +1048,7 @@
                         <div class="deal-details">📞 500 Minutes</div>
                         <div class="deal-validity">Validity: 7 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 500 for 500 Minutes - 7 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1029,7 +1057,7 @@
                         <div class="deal-details">📞 200 Minutes</div>
                         <div class="deal-validity">Validity: 7 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 250 for 200 Minutes - 7 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                 </div>
@@ -1041,7 +1069,7 @@
                         <div class="deal-details">📞 100 Minutes</div>
                         <div class="deal-validity">Validity: 2 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 100 for 100 Minutes - 2 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1050,7 +1078,7 @@
                         <div class="deal-details">📞 50 Minutes</div>
                         <div class="deal-validity">Validity: Midnight</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 50 for 50 Minutes - Midnight')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                 </div>
@@ -1074,7 +1102,7 @@
                         <div class="deal-details">💬 20 SMS</div>
                         <div class="deal-validity">Validity: 24 Hours</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 5 for 20 SMS - 24 Hours')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1083,7 +1111,7 @@
                         <div class="deal-details">💬 200 SMS</div>
                         <div class="deal-validity">Validity: 24 Hours</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 10 for 200 SMS - 24 Hours')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1092,7 +1120,7 @@
                         <div class="deal-details">💬 1000 SMS</div>
                         <div class="deal-validity">Validity: 7 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 30 for 1000 SMS - 7 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                 </div>
@@ -1115,7 +1143,7 @@
                         <div class="deal-details">📱 100 Mins, 500 SMS, 2 GB</div>
                         <div class="deal-validity">Validity: 30 Days + Free WhatsApp</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 500 for 100 Mins, 500 SMS, 2GB - 30 Days + WhatsApp')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1124,7 +1152,7 @@
                         <div class="deal-details">📱 8 GB, 400 Mins, 1000 SMS</div>
                         <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 1000 for 8GB, 400 Mins, 1000 SMS - 30 Days + WhatsApp')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1133,7 +1161,7 @@
                         <div class="deal-details">📱 17 GB, 1000 Mins, 2000 SMS</div>
                         <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 2000 for 17GB, 1000 Mins, 2000 SMS - 30 Days + WhatsApp')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1142,7 +1170,7 @@
                         <div class="deal-details">📱 27 GB, 1500 Mins, 3000 SMS</div>
                         <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 3000 for 27GB, 1500 Mins, 3000 SMS - 30 Days + WhatsApp')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1151,7 +1179,7 @@
                         <div class="deal-details">📱 47 GB, 2500 Mins, 5000 SMS</div>
                         <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 5000 for 47GB, 2500 Mins, 5000 SMS - 30 Days + WhatsApp')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1160,7 +1188,7 @@
                         <div class="deal-details">📱 100 GB, 7500 Mins, 10000 SMS</div>
                         <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 10000 for 100GB, 7500 Mins, 10000 SMS - 30 Days + WhatsApp')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                 </div>
@@ -1172,7 +1200,7 @@
                         <div class="deal-details">🛜 1.2 GB</div>
                         <div class="deal-validity">Validity: 30 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 250 for 1.2GB - 30 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1181,7 +1209,7 @@
                         <div class="deal-details">🛜 2.5 GB</div>
                         <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 500 for 2.5GB - 30 Days + WhatsApp')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1190,7 +1218,7 @@
                         <div class="deal-details">🛜 10 GB</div>
                         <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 1000 for 10GB - 30 Days + WhatsApp')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1199,7 +1227,7 @@
                         <div class="deal-details">🛜 22 GB</div>
                         <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 2000 for 22GB - 30 Days + WhatsApp')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1208,7 +1236,7 @@
                         <div class="deal-details">🛜 40 GB</div>
                         <div class="deal-validity">Validity: 30 Days + WhatsApp</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 3000 for 40GB - 30 Days + WhatsApp')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                 </div>
@@ -1220,7 +1248,7 @@
                         <div class="deal-details">📞 300 Mins + 500 SMS</div>
                         <div class="deal-validity">Validity: 30 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 500 for 300 Mins + 500 SMS - 30 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1229,7 +1257,7 @@
                         <div class="deal-details">📞 800 Mins + 1000 SMS</div>
                         <div class="deal-validity">Validity: 30 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 1000 for 800 Mins + 1000 SMS - 30 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1238,7 +1266,7 @@
                         <div class="deal-details">📞 1700 Mins + 5000 SMS</div>
                         <div class="deal-validity">Validity: 30 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 2000 for 1700 Mins + 5000 SMS - 30 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                     
@@ -1247,7 +1275,7 @@
                         <div class="deal-details">📞 2700 Mins + 5000 SMS</div>
                         <div class="deal-validity">Validity: 30 Days</div>
                         <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 3000 for 2700 Mins + 5000 SMS - 30 Days')">
-                            <i class="fab fa-whatsapp"></i> Order Now
+                            <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
                 </div>
@@ -1299,10 +1327,13 @@
             <span class="close" onclick="closeModal('orderModal')">&times;</span>
             <h2 class="modal-title">How would you like to order?</h2>
             <div class="modal-options">
-                <button class="modal-option" onclick="proceedToWhatsApp()">
-                    <i class="fab fa-whatsapp"></i> Proceed to WhatsApp
+                <button class="modal-option whatsapp-option" onclick="proceedToWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
                 </button>
-                <button class="modal-option" onclick="showPaymentInstructions()">
+                <button class="modal-option sms-option" onclick="proceedToSMS()">
+                    <i class="fas fa-sms"></i> Order via SMS
+                </button>
+                <button class="modal-option payment-option" onclick="showPaymentInstructions()">
                     <i class="fas fa-money-bill-wave"></i> How to Pay Directly
                 </button>
             </div>
@@ -1345,7 +1376,7 @@
                 </div>
             </div>
             <div class="modal-options">
-                <button class="modal-option" onclick="closeModal('paymentModal')">
+                <button class="modal-option payment-option" onclick="closeModal('paymentModal')">
                     <i class="fas fa-check"></i> I've Understood
                 </button>
             </div>
@@ -1394,6 +1425,16 @@
             const encodedMessage = encodeURIComponent(message);
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
+            closeModal('orderModal');
+        }
+        
+        // Proceed to SMS
+        function proceedToSMS() {
+            const phoneNumber = "+254704506403";
+            const message = `Hi, I'd like to order: ${currentDeal}. Till Number: 4857904`;
+            const encodedMessage = encodeURIComponent(message);
+            const smsURL = `sms:${phoneNumber}?body=${encodedMessage}`;
+            window.location.href = smsURL;
             closeModal('orderModal');
         }
         
