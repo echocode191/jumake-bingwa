@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FESTUS KIPKIRUI BINGWA SOKONI SERVICES - All Offers and Details</title>
+    <title>AGENT FESTUS KIPKIRUI BETT BINGWA SOKONI SERVICES - All Offers and Details</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -1137,7 +1137,7 @@
                 <div class="logo">
                     <img src="https://i.imgur.com/7Qpp9tP.png" alt="FESTUS BINGWA SOKONI SERVICES Logo">
                 </div>
-                <h1 class="logo-text">AGENT FESTUS KIPKIRUI BINGWA SOKONI SERVICES</h1>
+                <h1 class="logo-text">AGENT FESTUS KIPKIRUI BETT BINGWA SOKONI SERVICES</h1>
             </div>
             <div class="tagline">All Offers and Details</div>
             <div class="subtitle">Your trusted partner for affordable data, minutes, and SMS bundles</div>
@@ -1418,6 +1418,16 @@
                             <i class="fas fa-shopping-cart"></i> Order Now
                         </button>
                     </div>
+
+
+                    <div class="deal-card">
+                        <div class="deal-price">Ksh 201</div>
+                        <div class="deal-details">💬 3500 SMS</div>
+                        <div class="deal-validity">Validity: 30 Days</div>
+                        <button class="whatsapp-btn" onclick="showOrderOptions('Ksh 201 for 3500 SMS - 30 Days')">
+                            <i class="fas fa-shopping-cart"></i> Order Now
+                        </button>
+                    </div>
                
                 </div>
             </section>
@@ -1605,7 +1615,11 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>Customer Care: <strong>+254 704 506 403</strong></span>
+                        <span>Customer Care 1: <strong>+254 704 506 403</strong></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Customer Care 2: <strong>+254 706 700 703</strong></span>
                     </div>
                 </div>
             </section>
@@ -1668,7 +1682,7 @@
                 </div>
                 <div class="payment-step">
                     <div class="step-number">7</div>
-                    <div class="step-text">Send payment confirmation to <span class="highlight">+254 704 506 403</span> via WhatsApp or SMS</div>
+                    <div class="step-text">Send payment confirmation to either <span class="highlight">+254 704 506 403</span> or <span class="highlight">+254 706 700 703</span> via WhatsApp or SMS</div>
                 </div>
             </div>
             <div class="modal-options">
@@ -1679,9 +1693,26 @@
         </div>
     </div>
     
+    <!-- Phone Selection Modal -->
+    <div id="phoneSelectionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('phoneSelectionModal')">&times;</span>
+            <h2 class="modal-title">Select Phone Number</h2>
+            <div class="modal-options">
+                <button class="modal-option whatsapp-option" onclick="selectPhoneNumber('254704506403')">
+                    <i class="fas fa-phone"></i> 0704 506 403
+                </button>
+                <button class="modal-option whatsapp-option" onclick="selectPhoneNumber('254706700703')">
+                    <i class="fas fa-phone"></i> 0706 700 703
+                </button>
+            </div>
+        </div>
+    </div>
+    
     <script>
         // Global variable to store current deal
         let currentDeal = "";
+        let currentAction = ""; // 'whatsapp' or 'sms'
         
         // Create animated background bubbles
         function createBubbles() {
@@ -1729,40 +1760,46 @@
         
         // Proceed to WhatsApp
         function proceedToWhatsApp() {
-            const phoneNumber = "254704506403";
-            const message = `Hi, I'd like to order: ${currentDeal}. Till Number: 4857904`;
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            window.open(whatsappURL, '_blank');
+            currentAction = 'whatsapp';
             closeModal('orderModal');
+            document.getElementById('phoneSelectionModal').style.display = 'block';
         }
         
         // Proceed to SMS
         function proceedToSMS() {
-            // Using the local number format as requested: 0704506403
-            const phoneNumber = "0704506403";
-            const message = `Hi, I'd like to order: ${currentDeal}. Till Number: 4857904`;
-            const encodedMessage = encodeURIComponent(message);
-            
-            // Create SMS link that opens the SMS app with pre-filled message
-            const smsURL = `sms:${phoneNumber}?body=${encodedMessage}`;
-            
-            // Try to open the SMS app
-            window.location.href = smsURL;
-            
-            // Fallback for browsers that don't support SMS links
-            setTimeout(function() {
-                // If the SMS app didn't open, show an alert with instructions
-                if (document.hidden || document.webkitHidden) {
-                    // SMS app likely opened
-                    return;
-                }
-                
-                // Show manual instructions
-                alert(`Please send an SMS to 0704506403 with the following message:\n\n${message}`);
-            }, 500);
-            
+            currentAction = 'sms';
             closeModal('orderModal');
+            document.getElementById('phoneSelectionModal').style.display = 'block';
+        }
+        
+        // Select phone number
+        function selectPhoneNumber(phoneNumber) {
+            if (currentAction === 'whatsapp') {
+                const message = `Hi, I'd like to order: ${currentDeal}. Till Number: 4857904`;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappURL, '_blank');
+            } else if (currentAction === 'sms') {
+                // Convert international format to local format
+                const localNumber = '0' + phoneNumber.substring(3);
+                const message = `Hi, I'd like to order: ${currentDeal}. Till Number: 4857904`;
+                const encodedMessage = encodeURIComponent(message);
+                const smsURL = `sms:${localNumber}?body=${encodedMessage}`;
+                
+                window.location.href = smsURL;
+                
+                // Fallback for browsers that don't support SMS links
+                setTimeout(function() {
+                    if (document.hidden || document.webkitHidden) {
+                        // SMS app likely opened
+                        return;
+                    }
+                    
+                    // Show manual instructions
+                    alert(`Please send an SMS to ${localNumber} with the following message:\n\n${message}`);
+                }, 500);
+            }
+            closeModal('phoneSelectionModal');
         }
         
         // Show payment instructions
@@ -1827,6 +1864,7 @@
         window.onclick = function(event) {
             const orderModal = document.getElementById('orderModal');
             const paymentModal = document.getElementById('paymentModal');
+            const phoneSelectionModal = document.getElementById('phoneSelectionModal');
             
             if (event.target == orderModal) {
                 orderModal.style.display = "none";
@@ -1834,6 +1872,10 @@
             
             if (event.target == paymentModal) {
                 paymentModal.style.display = "none";
+            }
+            
+            if (event.target == phoneSelectionModal) {
+                phoneSelectionModal.style.display = "none";
             }
         }
     </script>
